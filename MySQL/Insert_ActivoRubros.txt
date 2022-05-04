@@ -1,0 +1,33 @@
+Use BDC;
+
+Insert into BDC.Activo(NombreActivo)
+Values("BTC/USDT");
+
+Insert into BDC.Activo(NombreActivo)
+Values("BNB/USDT");
+
+Insert into BDC.Activo(NombreActivo)
+Values("XRP/USDT");
+
+Insert into BDC.Activo(NombreActivo)
+Values("ETH/USDT");
+
+Insert into BDC.Grafico(Link)
+Values("https://es.tradingview.com/symbols/BTCUSDT/");
+
+Insert into BDC.Grafico(Link)
+Values("https://es.tradingview.com/symbols/BNBUSDT/");
+
+Insert into BDC.Grafico(Link)
+Values("https://es.tradingview.com/symbols/XRPUSDT/");
+
+Insert into BDC.Grafico(Link)
+Values("https://es.tradingview.com/symbols/ETHUSDT/");
+
+Insert into BDC.Rubros(Tipo,Descripcion)
+Values(1,"Criptocurrency");
+
+Insert into BDC.Rubros(Tipo,Descripcion)
+Values(2,"Acciones");
+
+Select * From Indicadores;
