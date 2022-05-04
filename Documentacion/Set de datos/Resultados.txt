@@ -1,0 +1,9 @@
+Bajara demasiado	1
+Bajara Mucho		2
+Bajara			3
+Posible Bajada		4
+Lateralizara		5
+Posible Subida		6
+Subira			7
+Subira Mucho		8
+Subira demasiado	9
