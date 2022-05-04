@@ -1,0 +1,42 @@
+Use BDC;
+
+Drop procedure Register;
+
+Delimiter $$
+Create Procedure Register (
+_Mail Varchar(30),
+_Nombre Varchar(30),
+_Apellido Varchar(30),
+_Numero_Telefonico Varchar(30),
+_Perfil Varchar(30),
+_Contraseña Varchar(30)
+)
+Begin
+	Declare Devolucion INT;
+    
+    Insert INTO Usuarios(
+	Mail
+	,Nombre
+    ,Apellido
+    ,Numero_Telefonico
+    ,Perfil
+    ,Contraseña)
+    Values(
+    _Mail
+	,_Nombre
+    ,_Apellido
+    ,_Numero_Telefonico
+    ,_Perfil
+    ,_Contraseña
+    );
+    
+    Insert into Rel_Rol_Usuario(
+    IdUsuario,
+    IdRol
+    )Values(last_insert_id(),1);
+    
+    Select Devolucion;
+End$$
+Delimiter ;
+
+Call Register('Ejemplo@gmail.com', 'Ivan', 'Oro', '1512341234', 'Activo','1234567');

@@ -1,0 +1,164 @@
+Create Schema BDC;
+Use BDC;
+Create table if not exists BDC.Usuarios(
+	IdUsuario integer auto_increment,
+    Mail varchar(30),
+    Nombre varchar(30),
+    Apellido varchar(30),
+    Numero_Telefonco varchar(30),
+    Perfil varchar(30),
+    Contraseña varchar(30),
+    Primary key (IdUsuario)
+);
+
+Create table if not exists BDC.Roles(
+	IdRol integer auto_increment,
+    Tipo Integer,
+    Descripcion varchar(10),
+     Primary key (IdRol)
+);
+
+Create table if not exists BDC.Rel_Rol_Usuario(
+	IdRelRolUser integer auto_increment,
+    IdUsuario integer,
+    IdRol integer,
+    Primary key (IdRelRolUser)
+);
+
+Create table if not exists bdc.Perfil(
+	IdPerfil integer auto_increment,
+    Personalidad varchar(10),
+    Estrategia varchar(20),
+    Primary key (IdPerfil)
+);
+
+Create table if not exists BDC.Rel_Usuario_Perfil(
+	IdRelUsuarioPerfil integer auto_increment,
+    IdPerfil integer,
+    IdUsuario integer,
+    Primary key (IdRelUsuarioPerfil)
+);
+
+Create table if not exists BDC.Predictor(
+	IdPrediccion integer auto_increment,
+	Fecha_Predic Date,
+    Resultado varchar(30),
+    Primary key (IdPrediccion)
+);
+
+Create table if not exists BDC.Rel_Predic_Usuario(
+	IdRelPredicUser integer auto_increment,
+	IdUsuario integer,
+	IdPrediccion integer,
+    Primary key (IdRelPredicUser)
+);
+
+Create table if not exists BDC.Indicadores(
+	IdIndicador integer auto_increment,
+	Descripcion varchar(30),
+    Mapeo varchar(30),
+    Primary key (IdIndicador)
+);
+
+Create table if not exists BDC.Rel_Ind_Predic(
+	IdRelIndPredic integer auto_increment,
+	IdIndicador integer,
+	IdPrediccion integer,
+    Primary key (IdRelIndPredic)
+);
+
+CREATE TABLE if not exists `bdc`.`activo` (
+  `IdActivo` INT NOT NULL AUTO_INCREMENT,
+  `NombreActivo` VARCHAR(30) NOT NULL,
+  `LinkGrafico` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`IdActivo`)
+  );
+  
+  CREATE TABLE if not exists `bdc`.`rel_ind_activo` (
+  `IdRelIndActivo` INT NOT NULL,
+  `IdActivo` INT NOT NULL,
+  `IdIndicador` INT NOT NULL,
+  PRIMARY KEY (`IdRelIndActivo`),
+  INDEX `fk_IdActivo_idx` (`IdActivo` ASC) VISIBLE,
+  INDEX `fk_IdIndicador_idx` (`IdIndicador` ASC) VISIBLE,
+  CONSTRAINT `fk_IdActivo`
+    FOREIGN KEY (`IdActivo`)
+    REFERENCES `bdc`.`activo` (`IdActivo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_IdIndicador`
+    FOREIGN KEY (`IdIndicador`)
+    REFERENCES `bdc`.`indicadores` (`IdIndicador`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+  CREATE TABLE if not exists `bdc`.`grafico` (
+  `IdGrafico` INT NOT NULL,
+  `Link` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`IdGrafico`));
+  
+  CREATE TABLE if not exists `bdc`.`rel_activo_grafico` (
+  `idRelActGrafico` INT NOT NULL,
+  `IdActivo` INT NOT NULL,
+  `IdGradico` INT NOT NULL,
+  PRIMARY KEY (`idRelActGrafico`),
+  INDEX `fk_IdGrafico_idx` (`IdGradico` ASC) VISIBLE,
+  INDEX `fk2_IdActivo_idx` (`IdActivo` ASC) VISIBLE,
+  CONSTRAINT `fk2_IdActivo`
+    FOREIGN KEY (`IdActivo`)
+    REFERENCES `bdc`.`activo` (`IdActivo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_IdGrafico`
+    FOREIGN KEY (`IdGradico`)
+    REFERENCES `bdc`.`grafico` (`IdGrafico`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+  CREATE TABLE if not exists `bdc`.`rubros` (
+  `IdRubro` INT NOT NULL,
+  `Tipo` INT NOT NULL,
+  `Descripcion` VARCHAR(10) NOT NULL,
+  PRIMARY KEY (`IdRubro`));
+
+CREATE TABLE if not exists `bdc`.`rel_rubro_activo` (
+  `IdRelRubroActivo` INT NOT NULL,
+  `IdActivo` INT NOT NULL,
+  `IdRubro` INT NOT NULL,
+  PRIMARY KEY (`IdRelRubroActivo`),
+  INDEX `fk3_IdActivo_idx` (`IdActivo` ASC) VISIBLE,
+  INDEX `fk_IdRubro_idx` (`IdRubro` ASC) VISIBLE,
+  CONSTRAINT `fk3_IdActivo`
+    FOREIGN KEY (`IdActivo`)
+    REFERENCES `bdc`.`activo` (`IdActivo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_IdRubro`
+    FOREIGN KEY (`IdRubro`)
+    REFERENCES `bdc`.`rubros` (`IdRubro`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+  CREATE TABLE if not exists `bdc`.`indicadorestecnicos` (
+  `IdIndicadorT` INT NOT NULL,
+  `NombreIndicador` VARCHAR(30) NOT NULL,
+  `Config` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`IdIndicadorT`));
+
+	CREATE TABLE if not exists `bdc`.`rel_ind_indtec` (
+  `IdRelInd_IndT` INT NOT NULL,
+  `IdIndicador` INT NOT NULL,
+  `IdIndicadorT` INT NOT NULL,
+  PRIMARY KEY (`IdRelInd_IndT`),
+  INDEX `fk_Indicador_idx` (`IdIndicador` ASC) VISIBLE,
+  INDEX `fk_IndicadorT_idx` (`IdIndicadorT` ASC) VISIBLE,
+  CONSTRAINT `fk_Indicador`
+    FOREIGN KEY (`IdIndicador`)
+    REFERENCES `bdc`.`indicadores` (`IdIndicador`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_IndicadorT`
+    FOREIGN KEY (`IdIndicadorT`)
+    REFERENCES `bdc`.`indicadorestecnicos` (`IdIndicadorT`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
