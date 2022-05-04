@@ -1,0 +1,44 @@
+I:\Programacion\casaRed\bin\Debug\casaRed.exe.config
+I:\Programacion\casaRed\bin\Debug\casaRed.exe
+I:\Programacion\casaRed\bin\Debug\casaRed.pdb
+I:\Programacion\casaRed\bin\Debug\casaRed.xml
+I:\Programacion\casaRed\obj\Debug\casaRed.vbprojAssemblyReference.cache
+I:\Programacion\casaRed\obj\Debug\casaRed.Resources.resources
+I:\Programacion\casaRed\obj\Debug\casaRed.vbproj.GenerateResource.cache
+I:\Programacion\casaRed\obj\Debug\casaRed.vbproj.CoreCompileInputs.cache
+I:\Programacion\casaRed\obj\Debug\casaRed.exe
+I:\Programacion\casaRed\obj\Debug\casaRed.xml
+I:\Programacion\casaRed\obj\Debug\casaRed.pdb
+F:\Programacion\casaRed\bin\Debug\casaRed.exe.config
+F:\Programacion\casaRed\bin\Debug\casaRed.exe
+F:\Programacion\casaRed\bin\Debug\casaRed.pdb
+F:\Programacion\casaRed\bin\Debug\casaRed.xml
+F:\Programacion\casaRed\obj\Debug\casaRed.vbproj.AssemblyReference.cache
+F:\Programacion\casaRed\obj\Debug\casaRed.Resources.resources
+F:\Programacion\casaRed\obj\Debug\casaRed.vbproj.GenerateResource.cache
+F:\Programacion\casaRed\obj\Debug\casaRed.vbproj.CoreCompileInputs.cache
+F:\Programacion\casaRed\obj\Debug\casaRed.exe
+F:\Programacion\casaRed\obj\Debug\casaRed.xml
+F:\Programacion\casaRed\obj\Debug\casaRed.pdb
+F:\proyecto final 2021\casaRed\bin\Debug\casaRed.exe.config
+F:\proyecto final 2021\casaRed\bin\Debug\casaRed.exe
+F:\proyecto final 2021\casaRed\bin\Debug\casaRed.pdb
+F:\proyecto final 2021\casaRed\bin\Debug\casaRed.xml
+F:\proyecto final 2021\casaRed\obj\Debug\casaRed.vbprojAssemblyReference.cache
+F:\proyecto final 2021\casaRed\obj\Debug\casaRed.Resources.resources
+F:\proyecto final 2021\casaRed\obj\Debug\casaRed.vbproj.GenerateResource.cache
+F:\proyecto final 2021\casaRed\obj\Debug\casaRed.vbproj.CoreCompileInputs.cache
+F:\proyecto final 2021\casaRed\obj\Debug\casaRed.exe
+F:\proyecto final 2021\casaRed\obj\Debug\casaRed.xml
+F:\proyecto final 2021\casaRed\obj\Debug\casaRed.pdb
+F:\casaRed\bin\Debug\casaRed.exe.config
+F:\casaRed\bin\Debug\casaRed.exe
+F:\casaRed\bin\Debug\casaRed.pdb
+F:\casaRed\bin\Debug\casaRed.xml
+F:\casaRed\obj\Debug\casaRed.vbprojAssemblyReference.cache
+F:\casaRed\obj\Debug\casaRed.Resources.resources
+F:\casaRed\obj\Debug\casaRed.vbproj.GenerateResource.cache
+F:\casaRed\obj\Debug\casaRed.vbproj.CoreCompileInputs.cache
+F:\casaRed\obj\Debug\casaRed.exe
+F:\casaRed\obj\Debug\casaRed.xml
+F:\casaRed\obj\Debug\casaRed.pdb
